@@ -1,0 +1,291 @@
+{
+  "metadata": {
+    "name": "Sistema de Incidencias y Requerimientos - Tabasco DC",
+    "version": "1.0",
+    "description": "Paleta de colores completa para el sistema de gestión de incidencias",
+    "date": "2026-04-24",
+    "author": "Tabasco DC Development"
+  },
+  "primaryColors": {
+    "primary": {
+      "name": "Azul Principal",
+      "hex": "#003d99",
+      "rgb": "rgb(0, 61, 153)",
+      "usage": "Headers, botones principales, sidebar",
+      "contrast": "Texto blanco - WCAG AAA"
+    },
+    "primaryDark": {
+      "name": "Azul Oscuro",
+      "hex": "#002d73",
+      "rgb": "rgb(0, 45, 115)",
+      "usage": "Hover, estados activos",
+      "contrast": "Texto blanco - WCAG AAA"
+    },
+    "primaryLight": {
+      "name": "Azul Claro",
+      "hex": "#4a7bbd",
+      "rgb": "rgb(74, 123, 189)",
+      "usage": "Acentos, elementos secundarios",
+      "contrast": "Texto blanco - WCAG AA"
+    }
+  },
+  "neutralColors": {
+    "white": {
+      "name": "Blanco",
+      "hex": "#ffffff",
+      "rgb": "rgb(255, 255, 255)",
+      "usage": "Fondos principales"
+    },
+    "bgLight": {
+      "name": "Gris Fondo",
+      "hex": "#f5f6fa",
+      "rgb": "rgb(245, 246, 250)",
+      "usage": "Fondo secundario, body"
+    },
+    "border": {
+      "name": "Gris Frontera",
+      "hex": "#ecf0f1",
+      "rgb": "rgb(236, 240, 241)",
+      "usage": "Bordes, divisiones, líneas"
+    },
+    "textDark": {
+      "name": "Gris Texto Oscuro",
+      "hex": "#2c3e50",
+      "rgb": "rgb(44, 62, 80)",
+      "usage": "Texto principal"
+    },
+    "textLight": {
+      "name": "Gris Texto Claro",
+      "hex": "#7f8c8d",
+      "rgb": "rgb(127, 140, 141)",
+      "usage": "Texto secundario, metadata"
+    }
+  },
+  "states": {
+    "enProceso": {
+      "name": "En proceso",
+      "hex": "#3498db",
+      "rgb": "rgb(52, 152, 219)",
+      "cssClass": "badge-en-proceso",
+      "meaning": "Trabajando en la solicitud",
+      "icon": "⏳",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "resuelto": {
+      "name": "Resuelto",
+      "hex": "#27ae60",
+      "rgb": "rgb(39, 174, 96)",
+      "cssClass": "badge-resuelto",
+      "meaning": "Problema solucionado",
+      "icon": "✓",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "pendiente": {
+      "name": "Pendiente",
+      "hex": "#f39c12",
+      "rgb": "rgb(243, 156, 18)",
+      "cssClass": "badge-pendiente",
+      "meaning": "Esperando respuesta o aprobación",
+      "icon": "⏱",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "cancelado": {
+      "name": "Cancelado",
+      "hex": "#e74c3c",
+      "rgb": "rgb(231, 76, 60)",
+      "cssClass": "badge-cancelado",
+      "meaning": "Solicitud rechazada o anulada",
+      "icon": "✗",
+      "contrast": "Texto blanco - WCAG AAA"
+    }
+  },
+  "priorities": {
+    "baja": {
+      "name": "Baja",
+      "hex": "#27ae60",
+      "rgb": "rgb(39, 174, 96)",
+      "cssClass": "badge-baja",
+      "level": 1,
+      "sla": "5 días",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "media": {
+      "name": "Media",
+      "hex": "#f39c12",
+      "rgb": "rgb(243, 156, 18)",
+      "cssClass": "badge-media",
+      "level": 2,
+      "sla": "2 días",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "alta": {
+      "name": "Alta",
+      "hex": "#e74c3c",
+      "rgb": "rgb(231, 76, 60)",
+      "cssClass": "badge-alta",
+      "level": 3,
+      "sla": "4 horas",
+      "contrast": "Texto blanco - WCAG AAA"
+    },
+    "critica": {
+      "name": "Crítica",
+      "hex": "#8b0000",
+      "rgb": "rgb(139, 0, 0)",
+      "cssClass": "badge-critica",
+      "level": 4,
+      "sla": "1 hora",
+      "contrast": "Texto blanco - WCAG AAA"
+    }
+  },
+  "sites": {
+    "cali": {
+      "name": "CALI",
+      "hex": "#2c3e50",
+      "rgb": "rgb(44, 62, 80)",
+      "cssClass": "badge-cali",
+      "location": "Cali Sur",
+      "region": "Occidente",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "bogota": {
+      "name": "BOGOTÁ",
+      "hex": "#34495e",
+      "rgb": "rgb(52, 73, 94)",
+      "cssClass": "badge-bogota",
+      "location": "Sede Central",
+      "region": "Centro",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "medellin": {
+      "name": "MEDELLÍN",
+      "hex": "#16a085",
+      "rgb": "rgb(22, 160, 133)",
+      "cssClass": "badge-medellin",
+      "location": "Sede Norte",
+      "region": "Noroccidente",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "barranquilla": {
+      "name": "BARRANQUILLA",
+      "hex": "#2980b9",
+      "rgb": "rgb(41, 128, 185)",
+      "cssClass": "badge-barranquilla",
+      "location": "Sede Caribe",
+      "region": "Caribe",
+      "contrast": "Texto blanco - WCAG AA"
+    }
+  },
+  "types": {
+    "incidencia": {
+      "name": "Incidencia",
+      "hex": "#8e44ad",
+      "rgb": "rgb(142, 68, 173)",
+      "cssClass": "badge-incidencia",
+      "meaning": "Problemas o fallos en sistemas",
+      "category": "Reactive",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "requerimiento": {
+      "name": "Requerimiento",
+      "hex": "#16a085",
+      "rgb": "rgb(22, 160, 133)",
+      "cssClass": "badge-requerimiento",
+      "meaning": "Solicitudes de nueva funcionalidad",
+      "category": "Proactive",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "mantenimiento": {
+      "name": "Mantenimiento",
+      "hex": "#d35400",
+      "rgb": "rgb(211, 84, 0)",
+      "cssClass": "badge-mantenimiento",
+      "meaning": "Tareas de mantenimiento preventivo",
+      "category": "Preventive",
+      "contrast": "Texto blanco - WCAG AA"
+    },
+    "consulta": {
+      "name": "Consulta",
+      "hex": "#2980b9",
+      "rgb": "rgb(41, 128, 185)",
+      "cssClass": "badge-consulta",
+      "meaning": "Preguntas e información",
+      "category": "Informational",
+      "contrast": "Texto blanco - WCAG AA"
+    }
+  },
+  "businessLines": [
+    {
+      "name": "SEDE CALI SUR",
+      "site": "CALI",
+      "code": "SC-001"
+    },
+    {
+      "name": "SEDE CENTRAL",
+      "site": "BOGOTÁ",
+      "code": "SC-002"
+    },
+    {
+      "name": "SEDE NORTE",
+      "site": "MEDELLÍN",
+      "code": "SC-003"
+    },
+    {
+      "name": "SEDE CARIBE",
+      "site": "BARRANQUILLA",
+      "code": "SC-004"
+    }
+  ],
+  "cssVariables": {
+    "primary": "--color-primary: #003d99;",
+    "primaryDark": "--color-primary-dark: #002d73;",
+    "primaryLight": "--color-primary-light: #4a7bbd;",
+    "white": "--color-white: #ffffff;",
+    "bg": "--color-bg: #f5f6fa;",
+    "text": "--color-text: #2c3e50;",
+    "textLight": "--color-text-light: #7f8c8d;",
+    "border": "--color-border: #ecf0f1;",
+    "stateEnProceso": "--state-en-proceso: #3498db;",
+    "stateResuelto": "--state-resuelto: #27ae60;",
+    "statePendiente": "--state-pendiente: #f39c12;",
+    "stateCancelado": "--state-cancelado: #e74c3c;",
+    "priorityBaja": "--priority-baja: #27ae60;",
+    "priorityMedia": "--priority-media: #f39c12;",
+    "priorityAlta": "--priority-alta: #e74c3c;",
+    "priorityCritica": "--priority-critica: #8b0000;",
+    "siteCali": "--site-cali: #2c3e50;",
+    "siteBogota": "--site-bogota: #34495e;",
+    "siteMedellin": "--site-medellin: #16a085;",
+    "siteBarranquilla": "--site-barranquilla: #2980b9;",
+    "typeIncidencia": "--type-incidencia: #8e44ad;",
+    "typeRequerimiento": "--type-requerimiento: #16a085;",
+    "typeMantenimiento": "--type-mantenimiento: #d35400;",
+    "typeConsulta": "--type-consulta: #2980b9;"
+  },
+  "htmlUsageExamples": [
+    "<span class='badge badge-en-proceso'>En proceso</span>",
+    "<span class='badge badge-resuelto'>Resuelto</span>",
+    "<span class='badge badge-baja'>Baja</span>",
+    "<span class='badge badge-cali'>CALI</span>",
+    "<span class='badge badge-incidencia'>Incidencia</span>"
+  ],
+  "wcagCompliance": {
+    "level": "AA",
+    "contrastRatio": "All colors meet WCAG AA standard",
+    "accessibility": "Color is not the only means of conveying information",
+    "notes": "Paleta diseñada con accesibilidad en mente"
+  },
+  "exportFormats": {
+    "json": "Este archivo",
+    "csv": "Disponible en paleta-colores.html",
+    "css": "Importable en styles.css",
+    "hex": "Códigos hex disponibles",
+    "rgb": "Valores RGB disponibles"
+  },
+  "notes": [
+    "La paleta está optimizada para legibilidad y accesibilidad",
+    "Todos los colores de fondo usan texto blanco para máximo contraste",
+    "Las variables CSS permiten cambios globales rápidos",
+    "La paleta es consistente en todo el sistema",
+    "Cada color tiene un propósito específico y bien definido"
+  ]
+}

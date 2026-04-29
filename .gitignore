@@ -1,0 +1,33 @@
+# Dependencias
+vendor/
+node_modules/
+
+# Configuración con credenciales (NO subir al repo)
+config/config.php
+config/database.php
+.env
+.env.local
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs y temporales
+*.log
+*.tmp
+*.cache
+/tmp/
+
+# Uploads del sistema
+uploads/
+storage/
+
+# PHP
+*.phar

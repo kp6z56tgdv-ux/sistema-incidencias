@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Fondo -->
+  <rect width="1200" height="800" fill="#f5f6fa"/>
+  
+  <!-- Título -->
+  <text x="600" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#003d99">
+    Paleta de Colores - Sistema de Incidencias
+  </text>
+  <text x="600" y="65" font-size="14" text-anchor="middle" fill="#7f8c8d">
+    Tabasco DC - 2026
+  </text>
+  
+  <!-- SECCIÓN 1: ESTADOS -->
+  <text x="20" y="120" font-size="18" font-weight="bold" fill="#003d99">ESTADOS</text>
+  
+  <!-- En proceso -->
+  <rect x="20" y="135" width="60" height="60" fill="#3498db" rx="4"/>
+  <text x="90" y="155" font-size="12" font-weight="bold" fill="#2c3e50">En proceso</text>
+  <text x="90" y="170" font-size="11" fill="#7f8c8d">#3498db</text>
+  <text x="90" y="183" font-size="10" fill="#7f8c8d">rgb(52, 152, 219)</text>
+  
+  <!-- Resuelto -->
+  <rect x="260" y="135" width="60" height="60" fill="#27ae60" rx="4"/>
+  <text x="330" y="155" font-size="12" font-weight="bold" fill="#2c3e50">Resuelto</text>
+  <text x="330" y="170" font-size="11" fill="#7f8c8d">#27ae60</text>
+  <text x="330" y="183" font-size="10" fill="#7f8c8d">rgb(39, 174, 96)</text>
+  
+  <!-- Pendiente -->
+  <rect x="500" y="135" width="60" height="60" fill="#f39c12" rx="4"/>
+  <text x="570" y="155" font-size="12" font-weight="bold" fill="#2c3e50">Pendiente</text>
+  <text x="570" y="170" font-size="11" fill="#7f8c8d">#f39c12</text>
+  <text x="570" y="183" font-size="10" fill="#7f8c8d">rgb(243, 156, 18)</text>
+  
+  <!-- Cancelado -->
+  <rect x="740" y="135" width="60" height="60" fill="#e74c3c" rx="4"/>
+  <text x="810" y="155" font-size="12" font-weight="bold" fill="#2c3e50">Cancelado</text>
+  <text x="810" y="170" font-size="11" fill="#7f8c8d">#e74c3c</text>
+  <text x="810" y="183" font-size="10" fill="#7f8c8d">rgb(231, 76, 60)</text>
+  
+  <!-- SECCIÓN 2: PRIORIDADES -->
+  <text x="20" y="250" font-size="18" font-weight="bold" fill="#003d99">PRIORIDADES</text>
+  
+  <!-- Baja -->
+  <rect x="20" y="265" width="60" height="60" fill="#27ae60" rx="4"/>
+  <text x="90" y="285" font-size="12" font-weight="bold" fill="#2c3e50">Baja</text>
+  <text x="90" y="300" font-size="11" fill="#7f8c8d">#27ae60</text>
+  <text x="90" y="313" font-size="10" fill="#7f8c8d">rgb(39, 174, 96)</text>
+  
+  <!-- Media -->
+  <rect x="260" y="265" width="60" height="60" fill="#f39c12" rx="4"/>
+  <text x="330" y="285" font-size="12" font-weight="bold" fill="#2c3e50">Media</text>
+  <text x="330" y="300" font-size="11" fill="#7f8c8d">#f39c12</text>
+  <text x="330" y="313" font-size="10" fill="#7f8c8d">rgb(243, 156, 18)</text>
+  
+  <!-- Alta -->
+  <rect x="500" y="265" width="60" height="60" fill="#e74c3c" rx="4"/>
+  <text x="570" y="285" font-size="12" font-weight="bold" fill="#2c3e50">Alta</text>
+  <text x="570" y="300" font-size="11" fill="#7f8c8d">#e74c3c</text>
+  <text x="570" y="313" font-size="10" fill="#7f8c8d">rgb(231, 76, 60)</text>
+  
+  <!-- Crítica -->
+  <rect x="740" y="265" width="60" height="60" fill="#8b0000" rx="4"/>
+  <text x="810" y="285" font-size="12" font-weight="bold" fill="#2c3e50">Crítica</text>
+  <text x="810" y="300" font-size="11" fill="#7f8c8d">#8b0000</text>
+  <text x="810" y="313" font-size="10" fill="#7f8c8d">rgb(139, 0, 0)</text>
+  
+  <!-- SECCIÓN 3: SITIOS -->
+  <text x="20" y="380" font-size="18" font-weight="bold" fill="#003d99">SITIOS</text>
+  
+  <!-- CALI -->
+  <rect x="20" y="395" width="60" height="60" fill="#2c3e50" rx="4"/>
+  <text x="90" y="415" font-size="12" font-weight="bold" fill="#2c3e50">CALI</text>
+  <text x="90" y="430" font-size="11" fill="#7f8c8d">#2c3e50</text>
+  <text x="90" y="443" font-size="10" fill="#7f8c8d">rgb(44, 62, 80)</text>
+  
+  <!-- BOGOTÁ -->
+  <rect x="260" y="395" width="60" height="60" fill="#34495e" rx="4"/>
+  <text x="330" y="415" font-size="12" font-weight="bold" fill="#2c3e50">BOGOTÁ</text>
+  <text x="330" y="430" font-size="11" fill="#7f8c8d">#34495e</text>
+  <text x="330" y="443" font-size="10" fill="#7f8c8d">rgb(52, 73, 94)</text>
+  
+  <!-- MEDELLÍN -->
+  <rect x="500" y="395" width="60" height="60" fill="#16a085" rx="4"/>
+  <text x="570" y="415" font-size="12" font-weight="bold" fill="#2c3e50">MEDELLÍN</text>
+  <text x="570" y="430" font-size="11" fill="#7f8c8d">#16a085</text>
+  <text x="570" y="443" font-size="10" fill="#7f8c8d">rgb(22, 160, 133)</text>
+  
+  <!-- BARRANQUILLA -->
+  <rect x="740" y="395" width="60" height="60" fill="#2980b9" rx="4"/>
+  <text x="810" y="415" font-size="12" font-weight="bold" fill="#2c3e50">BARRANQUILLA</text>
+  <text x="810" y="430" font-size="11" fill="#7f8c8d">#2980b9</text>
+  <text x="810" y="443" font-size="10" fill="#7f8c8d">rgb(41, 128, 185)</text>
+  
+  <!-- SECCIÓN 4: TIPOS -->
+  <text x="20" y="510" font-size="18" font-weight="bold" fill="#003d99">TIPOS</text>
+  
+  <!-- Incidencia -->
+  <rect x="20" y="525" width="60" height="60" fill="#8e44ad" rx="4"/>
+  <text x="90" y="545" font-size="12" font-weight="bold" fill="#2c3e50">Incidencia</text>
+  <text x="90" y="560" font-size="11" fill="#7f8c8d">#8e44ad</text>
+  <text x="90" y="573" font-size="10" fill="#7f8c8d">rgb(142, 68, 173)</text>
+  
+  <!-- Requerimiento -->
+  <rect x="260" y="525" width="60" height="60" fill="#16a085" rx="4"/>
+  <text x="330" y="545" font-size="12" font-weight="bold" fill="#2c3e50">Requerimiento</text>
+  <text x="330" y="560" font-size="11" fill="#7f8c8d">#16a085</text>
+  <text x="330" y="573" font-size="10" fill="#7f8c8d">rgb(22, 160, 133)</text>
+  
+  <!-- Mantenimiento -->
+  <rect x="500" y="525" width="60" height="60" fill="#d35400" rx="4"/>
+  <text x="570" y="545" font-size="12" font-weight="bold" fill="#2c3e50">Mantenimiento</text>
+  <text x="570" y="560" font-size="11" fill="#7f8c8d">#d35400</text>
+  <text x="570" y="573" font-size="10" fill="#7f8c8d">rgb(211, 84, 0)</text>
+  
+  <!-- Consulta -->
+  <rect x="740" y="525" width="60" height="60" fill="#2980b9" rx="4"/>
+  <text x="810" y="545" font-size="12" font-weight="bold" fill="#2c3e50">Consulta</text>
+  <text x="810" y="560" font-size="11" fill="#7f8c8d">#2980b9</text>
+  <text x="810" y="573" font-size="10" fill="#7f8c8d">rgb(41, 128, 185)</text>
+  
+  <!-- SECCIÓN 5: CORPORATIVOS -->
+  <text x="20" y="640" font-size="18" font-weight="bold" fill="#003d99">CORPORATIVOS</text>
+  
+  <!-- Principal -->
+  <rect x="20" y="655" width="60" height="60" fill="#003d99" rx="4"/>
+  <text x="90" y="675" font-size="12" font-weight="bold" fill="#2c3e50">Principal</text>
+  <text x="90" y="690" font-size="11" fill="#7f8c8d">#003d99</text>
+  <text x="90" y="703" font-size="10" fill="#7f8c8d">rgb(0, 61, 153)</text>
+  
+  <!-- Oscuro -->
+  <rect x="260" y="655" width="60" height="60" fill="#002d73" rx="4"/>
+  <text x="330" y="675" font-size="12" font-weight="bold" fill="#2c3e50">Oscuro</text>
+  <text x="330" y="690" font-size="11" fill="#7f8c8d">#002d73</text>
+  <text x="330" y="703" font-size="10" fill="#7f8c8d">rgb(0, 45, 115)</text>
+  
+  <!-- Claro -->
+  <rect x="500" y="655" width="60" height="60" fill="#4a7bbd" rx="4"/>
+  <text x="570" y="675" font-size="12" font-weight="bold" fill="#2c3e50">Claro</text>
+  <text x="570" y="690" font-size="11" fill="#7f8c8d">#4a7bbd</text>
+  <text x="570" y="703" font-size="10" fill="#7f8c8d">rgb(74, 123, 189)</text>
+  
+  <!-- Texto -->
+  <rect x="740" y="655" width="60" height="60" fill="#2c3e50" rx="4"/>
+  <text x="810" y="675" font-size="12" font-weight="bold" fill="#2c3e50">Texto</text>
+  <text x="810" y="690" font-size="11" fill="#7f8c8d">#2c3e50</text>
+  <text x="810" y="703" font-size="10" fill="#7f8c8d">rgb(44, 62, 80)</text>
+  
+  <!-- Footer -->
+  <text x="600" y="780" font-size="12" text-anchor="middle" fill="#7f8c8d">
+    Paleta de colores exportable - Uso para todo el sistema
+  </text>
+</svg>
