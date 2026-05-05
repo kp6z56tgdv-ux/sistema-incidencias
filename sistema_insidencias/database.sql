@@ -34,19 +34,29 @@ INSERT INTO tickets (solicitante, estado, sitio, tipo, prioridad, linea_negocio,
 ('User name', 'Resuelto', 'MEDELLÍN', 'Incidencia', 'Alta', 'SEDE NORTE', 'user admin', '2026-04-20 14:15:00', '2026-04-22 16:45:00'),
 ('User name', 'Pendiente', 'BARRANQUILLA', 'Requerimiento', 'Crítica', 'SEDE CARIBE', 'user admin', '2026-04-22 10:00:00', NULL);
 
--- Crear tabla de usuarios (opcional)
+-- Crear tabla de usuarios
+-- Roles: admin (acceso total), usuario (crear/ver tickets), aprobaciones (aprobar/rechazar)
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     contraseña VARCHAR(255) NOT NULL,
-    rol ENUM('Admin', 'Agente', 'Usuario') DEFAULT 'Usuario',
+    rol ENUM('admin', 'usuario', 'aprobaciones') DEFAULT 'usuario',
     sitio ENUM('CALI', 'BOGOTÁ', 'MEDELLÍN', 'BARRANQUILLA'),
     activo BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Nota: Los usuarios se crean ejecutando setup.php desde el navegador (una sola vez).
+-- Usuarios por defecto:
+--   admin@helpdesk.com       / admin123  → rol: admin
+--   usuario@helpdesk.com     / user123   → rol: usuario
+--   aprobaciones@helpdesk.com/ apro123   → rol: aprobaciones
+
+-- Si ya tienes la tabla con el ENUM anterior, actualiza el campo así:
+-- ALTER TABLE usuarios MODIFY COLUMN rol ENUM('admin','usuario','aprobaciones') DEFAULT 'usuario';
 
 -- Crear tabla de auditoría (opcional)
 CREATE TABLE IF NOT EXISTS auditoria (
