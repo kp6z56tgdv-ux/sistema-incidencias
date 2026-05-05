@@ -40,7 +40,7 @@ $resultados = [];
 foreach ($usuarios as $u) {
     $hash = password_hash($u['password'], PASSWORD_DEFAULT);
     $stmt = $db->prepare(
-        "INSERT INTO usuarios (nombre, email, contraseña, rol, sitio, activo)
+        "INSERT INTO usuarios (nombre, email, contrasena, rol, sitio, activo)
          VALUES (?, ?, ?, ?, ?, 1)
          ON DUPLICATE KEY UPDATE nombre = VALUES(nombre), rol = VALUES(rol)"
     );
@@ -59,7 +59,7 @@ $db->close();
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Setup — Help Desk</title>
+<title>Setup — Sistema de Incidencias</title>
 <style>
   body { font-family: 'Segoe UI', sans-serif; background: #f0f2f7; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
   .card { background: #fff; border-radius: 16px; padding: 40px 48px; box-shadow: 0 8px 32px rgba(0,0,0,.1); max-width: 520px; width: 100%; }
@@ -76,7 +76,7 @@ $db->close();
 </head>
 <body>
 <div class="card">
-    <h1>🎧 Setup completado</h1>
+    <h1><img src="logo.jpg" alt="Logo" style="width:48px;height:48px;object-fit:contain;border-radius:8px;vertical-align:middle;margin-right:12px;">Setup completado</h1>
     <p class="sub">Usuarios creados en la base de datos.</p>
     <table>
         <tr><th>Email</th><th>Contraseña</th><th>Rol</th><th>Estado</th></tr>

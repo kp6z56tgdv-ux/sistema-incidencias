@@ -1,19 +1,19 @@
 <?php
-session_start();
 require_once 'auth.php';
 verificarSesion();
-$rol    = $_SESSION['rol'];
-$nombre = $_SESSION['nombre'];
+$rol    = $_SESSION['rol'] ?? 'usuario';
+$nombre = $_SESSION['nombre'] ?? 'Usuario';
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help Desk - Sistema de Tickets</title>
+    <title>Sistema de Incidencias</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons/css/regular-rounded.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,29 +22,44 @@ $nombre = $_SESSION['nombre'];
         <!-- ===== SIDEBAR ===== -->
         <aside class="sidebar">
             <div class="sidebar-logo">
-                <div class="logo-icon">🎧</div>
-                <div class="logo-text">
-                    <span>Help</span><strong>Desk</strong>
-                </div>
+                <img src="logo.jpg" alt="Logo" class="sidebar-logo-img">
             </div>
 
             <nav class="sidebar-nav">
                 <button class="nav-btn active" data-filter="all">
-                    <span class="nav-icon">⊞</span>
-                    Todos los tickets
+                    <span class="nav-icon"><i class="fi fi-rs-ticket"></i></span>
+                    Total tickets
                 </button>
                 <button class="nav-btn" data-filter="pending">
-                    <span class="nav-icon">⏳</span>
-                    Pendientes
+                    <span class="nav-icon"><i class="fi fi-rs-clock"></i></span>
+                    Asignados a
                 </button>
                 <button class="nav-btn" data-filter="process">
-                    <span class="nav-icon">⚙</span>
-                    En proceso
+                    <span class="nav-icon"><i class="fi fi-rs-settings"></i></span>
+                    Estados
                 </button>
                 <button class="nav-btn" data-filter="high">
-                    <span class="nav-icon">🔺</span>
-                    Alta prioridad
+                    <span class="nav-icon"><i class="fi fi-rs-exclamation"></i></span>
+                    Prioridad
                 </button>
+                <button class="nav-btn" data-filter="assigned">
+                    <span class="nav-icon"><i class="fi fi-rs-user"></i></span>
+                    Tipo de solicitud
+                </button>
+
+                <div class="nav-btn-center-wrapper">
+                    <a href="crear_ticket.php" class="nav-btn" data-filter="create_ticket">
+                        <span class="nav-icon"><i class="fi fi-rs-user"></i></span>
+                        Crear Ticket
+                    </a>
+                <button class="nav-btn" data-filter="reports">
+                    <span class="nav-icon"><i class="fi fi-rs-plus"></i></span>
+                        informes
+                </div>
+                    <div class="crear-header-user">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                    </div>
+
             </nav>
 
             <div class="sidebar-divider"></div>
@@ -71,7 +86,7 @@ $nombre = $_SESSION['nombre'];
             </div>
 
             <button class="sidebar-refresh" onclick="location.reload()">
-                <span>↻</span> Actualizar
+                <i class="fi fi-rs-reload"></i> Actualizar
             </button>
         </aside>
 
@@ -86,24 +101,15 @@ $nombre = $_SESSION['nombre'];
                     <p class="header-desc">Revisa las solicitudes más importantes y mantén el flujo de trabajo en un solo lugar.</p>
                 </div>
                 <div class="header-actions">
-                    <div class="header-user">
-                        <span class="header-user-name"><?= htmlspecialchars($nombre) ?></span>
-                        <span class="role-badge role-<?= htmlspecialchars($rol) ?>"><?= ucfirst(htmlspecialchars($rol)) ?></span>
-                    </div>
-                    <?php if ($rol === 'admin'): ?>
-                    <button class="btn btn-outline">Exportar</button>
-                    <?php endif; ?>
-                    <?php if ($rol !== 'aprobaciones'): ?>
-                    <button class="btn btn-primary">+ Nuevo ticket</button>
-                    <?php endif; ?>
-                    <a href="logout.php" class="btn btn-outline">Salir</a>
+                    <a href="cuenta.php" class="btn btn-outline">Mi cuenta</a>
+                    <a href="logout.php" class="btn btn-outline">Cerrar sesión</a>
                 </div>
             </header>
 
             <!-- Search & Quick Filters -->
             <section class="toolbar">
                 <div class="search-box">
-                    <span class="search-ico">🔍</span>
+                    <span class="search-ico"><i class="fi fi-rs-search"></i></span>
                     <input id="searchInput" type="search" placeholder="Buscar ticket, solicitante, tipo..." autocomplete="off">
                 </div>
                 <div class="quick-filters">

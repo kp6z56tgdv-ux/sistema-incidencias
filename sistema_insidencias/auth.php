@@ -32,7 +32,7 @@ function iniciarSesion($email, $password) {
     if (!$db) return ['exito' => false, 'mensaje' => 'Error al conectar con la base de datos.'];
 
     $stmt = $db->prepare(
-        "SELECT id, nombre, email, contraseña, rol, sitio, activo FROM usuarios WHERE email = ? LIMIT 1"
+        "SELECT id, nombre, email, contrasena, rol, sitio, activo FROM usuarios WHERE email = ? LIMIT 1"
     );
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -50,7 +50,7 @@ function iniciarSesion($email, $password) {
         return ['exito' => false, 'mensaje' => 'Tu cuenta está desactivada. Contacta al administrador.'];
     }
 
-    if (!password_verify($password, $usuario['contraseña'])) {
+    if (!password_verify($password, $usuario['contrasena'])) {
         return ['exito' => false, 'mensaje' => 'Credenciales incorrectas.'];
     }
 
@@ -82,7 +82,7 @@ function registrarUsuario($nombre, $email, $password, $sitio) {
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $db->prepare(
-        "INSERT INTO usuarios (nombre, email, contraseña, rol, sitio, activo) VALUES (?, ?, ?, 'usuario', ?, 1)"
+        "INSERT INTO usuarios (nombre, email, contrasena, rol, sitio, activo) VALUES (?, ?, ?, 'usuario', ?, 1)"
     );
     $stmt->bind_param("ssss", $nombre, $email, $hash, $sitio);
     $ok = $stmt->execute();
@@ -90,6 +90,44 @@ function registrarUsuario($nombre, $email, $password, $sitio) {
 
     if (!$ok) return ['exito' => false, 'mensaje' => 'No se pudo crear la cuenta. Intenta de nuevo.'];
     return ['exito' => true, 'mensaje' => 'Cuenta creada exitosamente. Ya puedes iniciar sesión.'];
+}
+
+function actualizarContrasena($usuario_id, $contrasenaActual, $contrasenaNueva) {
+    if (empty($contrasenaActual) || empty($contrasenaNueva)) {
+        return ['exito' => false, 'mensaje' => 'Todos los campos son obligatorios.'];
+    }
+
+    if (strlen($contrasenaNueva) < 6) {
+        return ['exito' => false, 'mensaje' => 'La contraseña nueva debe tener al menos 6 caracteres.'];
+    }
+
+    $db = conectarBD();
+    if (!$db) return ['exito' => false, 'mensaje' => 'Error al conectar con la base de datos.'];
+
+    $stmt = $db->prepare("SELECT contrasena FROM usuarios WHERE id = ? LIMIT 1");
+    $stmt->bind_param("i", $usuario_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 0) {
+        $db->close();
+        return ['exito' => false, 'mensaje' => 'Usuario no encontrado.'];
+    }
+
+    $usuario = $result->fetch_assoc();
+    if (!password_verify($contrasenaActual, $usuario['contrasena'])) {
+        $db->close();
+        return ['exito' => false, 'mensaje' => 'La contraseña actual es incorrecta.'];
+    }
+
+    $hash = password_hash($contrasenaNueva, PASSWORD_DEFAULT);
+    $update = $db->prepare("UPDATE usuarios SET contrasena = ? WHERE id = ?");
+    $update->bind_param("si", $hash, $usuario_id);
+    $ok = $update->execute();
+    $db->close();
+
+    if (!$ok) return ['exito' => false, 'mensaje' => 'No se pudo actualizar la contraseña. Intenta de nuevo.'];
+    return ['exito' => true, 'mensaje' => 'Contraseña actualizada correctamente.'];
 }
 
 function cerrarSesion() {
