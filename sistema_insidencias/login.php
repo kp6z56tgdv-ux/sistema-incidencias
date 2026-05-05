@@ -39,55 +39,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="login-card">
 
-        <div class="login-center">
-            <div class="login-form-center">
-                <p class="eyebrow">Panel de control</p>
-                <h1 class="login-title">Iniciar sesión</h1>
-                <p class="login-sub">Ingresa con tus credenciales para continuar.</p>
-
-                <?php if ($error): ?>
-                    <div class="login-error">
-                        <span>⚠</span> <?= htmlspecialchars($error) ?>
-                    </div>
-                <?php endif; ?>
-
-                <form method="POST" class="login-form" novalidate>
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="tucorreo@empresa.com"
-                            value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
-                            required
-                            autocomplete="email"
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <div class="input-password-wrap">
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="••••••••"
-                                required
-                                autocomplete="current-password"
-                            >
-                            <button type="button" class="toggle-pass" onclick="togglePass()" title="Mostrar/ocultar contraseña">
-                                <span id="eye-icon">👁</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-login">
-                        Iniciar sesión →
-                    </button>
-                </form>
-            </div>
+        <div class="login-logo">
+            <img src="logo.jpg" alt="Logo">
         </div>
+
+        <h1 class="login-title">Iniciar sesión</h1>
+        <p class="login-sub">Ingresa con tus credenciales para continuar.</p>
+
+        <?php if ($error): ?>
+            <div class="login-error">
+                <span>⚠</span> <?= htmlspecialchars($error) ?>
+            </div>
+        <?php endif; ?>
+
+        <form method="POST" class="login-form" novalidate>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="tucorreo@empresa.com"
+                    value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <div class="input-password-wrap">
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="••••••••"
+                        required
+                        autocomplete="current-password"
+                    >
+                    <button type="button" class="toggle-pass" onclick="togglePass()" title="Mostrar/ocultar contraseña">
+                        <span id="eye-icon">👁</span>
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-login">Iniciar sesión →
+                Iniciar sesión →
+            </button>
+        <p class="login-sub-center">¿Aún no tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+        </form>
 
     </div>
 

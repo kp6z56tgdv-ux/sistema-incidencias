@@ -66,6 +66,32 @@ function iniciarSesion($email, $password) {
     return ['exito' => true, 'mensaje' => 'Sesión iniciada.'];
 }
 
+function registrarUsuario($nombre, $email, $password, $sitio) {
+    $db = conectarBD();
+    if (!$db) return ['exito' => false, 'mensaje' => 'Error al conectar con la base de datos.'];
+
+    $check = $db->prepare("SELECT id FROM usuarios WHERE email = ? LIMIT 1");
+    $check->bind_param("s", $email);
+    $check->execute();
+    $check->store_result();
+    if ($check->num_rows > 0) {
+        $db->close();
+        return ['exito' => false, 'mensaje' => 'Ya existe una cuenta con ese correo electrónico.'];
+    }
+    $check->close();
+
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $stmt = $db->prepare(
+        "INSERT INTO usuarios (nombre, email, contraseña, rol, sitio, activo) VALUES (?, ?, ?, 'usuario', ?, 1)"
+    );
+    $stmt->bind_param("ssss", $nombre, $email, $hash, $sitio);
+    $ok = $stmt->execute();
+    $db->close();
+
+    if (!$ok) return ['exito' => false, 'mensaje' => 'No se pudo crear la cuenta. Intenta de nuevo.'];
+    return ['exito' => true, 'mensaje' => 'Cuenta creada exitosamente. Ya puedes iniciar sesión.'];
+}
+
 function cerrarSesion() {
     if (session_status() === PHP_SESSION_NONE) session_start();
     session_unset();
