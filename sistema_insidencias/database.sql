@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    contraseña VARCHAR(255) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
     rol ENUM('admin', 'usuario', 'aprobaciones') DEFAULT 'usuario',
     sitio ENUM('CALI', 'BOGOTÁ', 'MEDELLÍN', 'BARRANQUILLA'),
     activo BOOLEAN DEFAULT TRUE,

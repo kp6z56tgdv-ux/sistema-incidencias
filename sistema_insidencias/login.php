@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión — Help Desk</title>
+    <title>Iniciar sesión — Sistema de Incidencias</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -83,8 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-login">Iniciar sesión →
-                Iniciar sesión →
+            <button type="submit" class="btn btn-primary btn-login">
+                Iniciar sesión<a href="index.php">
+                
             </button>
         <p class="login-sub-center">¿Aún no tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
         </form>
